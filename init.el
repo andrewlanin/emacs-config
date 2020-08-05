@@ -24,6 +24,8 @@
 ;; Disable menu bar.
 (menu-bar-mode -1)
 
+(load-theme 'alabaster t)
+
 (use-package org-roam
 	     :init
 	     (setq org-roam-directory "~/org")

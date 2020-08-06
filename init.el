@@ -30,7 +30,7 @@
 
 ;; Do not display tool bar.
 (tool-bar-mode -1)
- 
+
 ;; Display column number in the mode line.
 (setq column-number-mode t)
 
@@ -62,7 +62,13 @@
 (unless (file-exists-p custom-file) (write-region "" nil custom-file))
 (load custom-file)
 
-(load-theme 'alabaster t)
+(load-theme 'abright t)
+
+;; -----------------------------------------------------------------------------
+;; General key bindings.
+;; -----------------------------------------------------------------------------
+
+
 
 ;; -----------------------------------------------------------------------------
 ;; Org mode.
@@ -72,4 +78,3 @@
 	     :init
 	     (setq org-roam-directory "~/org")
 	     (make-directory org-roam-directory :parents))
-

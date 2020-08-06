@@ -1,0 +1,6 @@
+# Packages installed from the repository.
+elpa
+
+# Setting made in graphical interface go into custom.el.
+# I don't use it and prefer to put everything into init.el.
+custom.el

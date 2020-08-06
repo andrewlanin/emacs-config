@@ -27,12 +27,12 @@
 (let* ((class '((class color) (min-colors 89)))
 
        (active     "#007ACC")
-       (fg         "#000")
-       (bg         "gray95")
+       (fg         "#202020")
+       (bg         "#f0f0f0")
        (blue       "#DBF1FF")
        (green      "#F1FADF")
        (dark-green "#DBECB6")
-       (red        "#FF3030")
+       (red        "#FF0000")
        (magenta    "#F9E0FF")
        (yellow     "#FFFABC")
        (orange     "#FFBC5D")
@@ -48,7 +48,7 @@
    `(font-lock-keyword-face       ((,class (:foreground ,fg))))
    `(font-lock-constant-face      ((,class (:foreground ,fg))))
    `(font-lock-type-face          ((,class (:foreground ,fg))))
-   `(font-lock-builtin-face       ((,class (:background "gray90"))))
+   `(font-lock-builtin-face       ((,class (:background ,bg))))
    `(font-lock-string-face        ((,class (:background ,dark-green))))
    `(font-lock-doc-face           ((,class (:background ,yellow))))
    `(font-lock-comment-face       ((,class (:foreground ,red))))
@@ -56,11 +56,8 @@
    `(font-lock-function-name-face ((,class (:background ,blue))))
    `(font-lock-variable-name-face ((,class (:background ,blue))))
 
-   ;; clojure font lock
-   `(clojure-keyword-face         ((,class (:background "gray90"))))
-
    ;; mode line
-   `(mode-line                    ((,class (:inverse-video t))))
+   ;; `(mode-line                    ((,class (:inverse-video t))))
    `(mode-line-inactive           ((,class (:underline t))))
 
    ;; hl-line

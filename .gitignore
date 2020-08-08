@@ -4,3 +4,7 @@ elpa
 # Setting made in graphical interface go into custom.el.
 # I don't use it and prefer to put everything into init.el.
 custom.el
+
+# Something related to auto save. I turned it off in the config but the
+# directory keep appearing.
+auto-save-list

@@ -31,6 +31,14 @@
 ;; Do not display tool bar.
 (tool-bar-mode -1)
 
+;; Hide native scrollbar.
+(scroll-bar-mode -1)
+
+;; Turn off cursor blinking.
+(blink-cursor-mode 0)
+
+(set-face-attribute 'default nil :font "Iosevka 12")
+
 ;; Display column number in the mode line.
 (setq column-number-mode t)
 

@@ -34,8 +34,8 @@
 ;; Do not display tool bar.
 (tool-bar-mode -1)
 
-;; Hide native scrollbar.
-(scroll-bar-mode -1)
+;; Hide native scrollbar. Scroll bar is not available in emacs-nox.
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ;; Turn off cursor blinking.
 (blink-cursor-mode 0)

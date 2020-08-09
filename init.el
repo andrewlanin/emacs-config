@@ -86,6 +86,6 @@
 ;; -----------------------------------------------------------------------------
 
 (use-package org-roam
-	     :init
-	     (setq org-roam-directory "~/org")
-	     (make-directory org-roam-directory :parents))
+  :init
+    (setq org-roam-directory "~/org")
+    (make-directory org-roam-directory :parents))

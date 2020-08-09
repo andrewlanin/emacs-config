@@ -19,6 +19,9 @@
 ;; General settings.
 ;; -----------------------------------------------------------------------------
 
+;; Initial window size.
+(setq initial-frame-alist '((width . 120) (height . 40)))
+
 ;; Do not display startup buffer with basic information about emacs.
 (setq inhibit-startup-screen t)
 

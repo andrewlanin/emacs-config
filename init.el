@@ -111,7 +111,8 @@
 ;; and many other, adding nice completion to them.
 (use-package counsel
   :config
-    (counsel-mode 1))
+    (counsel-mode 1)
+    (global-set-key (kbd "C-S-f") 'counsel-rg))
 
 ;; Swiper does interactive search inside current file.
 (use-package swiper
@@ -160,3 +161,19 @@
   :init
     (setq org-roam-directory "~/org")
     (make-directory org-roam-directory :parents))
+
+;; -----------------------------------------------------------------------------
+;; Programming.
+;; -----------------------------------------------------------------------------
+
+;; Indentation.
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+
+;; Matching parentheses.
+(set-face-background 'show-paren-match "grey80")
+(set-face-attribute 'show-paren-match nil :weight 'extra-bold)
+(show-paren-mode)
+
+;; Comment/uncomment line.
+(global-set-key (kbd "C-/") 'comment-line)

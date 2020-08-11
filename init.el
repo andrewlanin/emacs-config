@@ -85,6 +85,7 @@
 ;; General key bindings.
 ;; -----------------------------------------------------------------------------
 
+(global-set-key (kbd "C-p") 'find-file)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-S-s") 'write-file) ; Save as...
 (global-set-key (kbd "C-x") 'kill-region)
@@ -92,7 +93,35 @@
 (global-set-key (kbd "C-v") 'yank)
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
-(global-set-key (kbd "C-p") 'find-file)
+(global-set-key (kbd "C-q") 'save-buffers-kill-emacs)
+
+;; -----------------------------------------------------------------------------
+;; General extensions.
+;; -----------------------------------------------------------------------------
+
+;; Ivy is a general-purpose completion framework for emacs.
+(use-package ivy
+  :config
+    (ivy-mode 1)
+    ;; Display current variant number and total variants in the completion
+    ;; buffer.
+    (setq ivy-count-format "(%d/%d) "))
+
+;; Counsel is emacs command enhancer. It replaces commands like M-x, find-file
+;; and many other, adding nice completion to them.
+(use-package counsel
+  :config
+    (counsel-mode 1))
+
+;; Swiper does interactive search inside current file.
+(use-package swiper
+  :config
+    (global-set-key (kbd "C-f") 'swiper-isearch))
+
+;; Replace command with nice feedback.
+(use-package visual-regexp
+  :config
+    (define-key global-map (kbd "C-r") 'vr/replace))
 
 ;; -----------------------------------------------------------------------------
 ;; Org mode.

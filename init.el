@@ -85,6 +85,15 @@
 ;; General key bindings.
 ;; -----------------------------------------------------------------------------
 
+(setq mac-command-modifier 'control)
+(setq mac-right-command-modifier 'control)
+(setq mac-control-modifier 'super)
+(setq mac-right-control-modifier 'super)
+(setq mac-option-modifier 'meta)
+(setq mac-left-option-modifier 'meta)
+;; Right Alt (option) can be used to enter symbols like em dashes =—=.
+(setq mac-right-option-modifier 'nil)
+
 (global-set-key (kbd "C-p") 'find-file)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-S-s") 'write-file) ; Save as...

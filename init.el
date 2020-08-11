@@ -75,11 +75,24 @@
 
 (load-theme 'abright t)
 
+;; By default if you type something while some portion of text is selected,
+;; emacs will add typed text to the end of selection. Activating
+;; delete-selection-mode makes it behave similar to all other software:
+;; delete selected text, than insert typed text in its place.
+(delete-selection-mode 1)
+
 ;; -----------------------------------------------------------------------------
 ;; General key bindings.
 ;; -----------------------------------------------------------------------------
 
-
+(global-set-key (kbd "C-s") 'save-buffer)
+(global-set-key (kbd "C-S-s") 'write-file) ; Save as...
+(global-set-key (kbd "C-x") 'kill-region)
+(global-set-key (kbd "C-c") 'kill-ring-save)
+(global-set-key (kbd "C-v") 'yank)
+(global-set-key (kbd "C-z") 'undo)
+(global-set-key (kbd "C-a") 'mark-whole-buffer)
+(global-set-key (kbd "C-p") 'find-file)
 
 ;; -----------------------------------------------------------------------------
 ;; Org mode.

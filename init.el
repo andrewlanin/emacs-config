@@ -85,6 +85,7 @@
 ;; General key bindings.
 ;; -----------------------------------------------------------------------------
 
+;; macOS modifier keys.
 (setq mac-command-modifier 'control)
 (setq mac-right-command-modifier 'control)
 (setq mac-control-modifier 'super)
@@ -94,6 +95,7 @@
 ;; Right Alt (option) can be used to enter symbols like em dashes =—=.
 (setq mac-right-option-modifier 'nil)
 
+;; Basic actions.
 (global-set-key (kbd "C-p") 'find-file)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-S-s") 'write-file) ; Save as...
@@ -103,6 +105,9 @@
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-q") 'save-buffers-kill-emacs)
+
+;; Quick files.
+(global-set-key (kbd "\e\ec") (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
 
 ;; -----------------------------------------------------------------------------
 ;; General extensions.

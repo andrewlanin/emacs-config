@@ -124,6 +124,35 @@
     (define-key global-map (kbd "C-r") 'vr/replace))
 
 ;; -----------------------------------------------------------------------------
+;; Windows.
+;; -----------------------------------------------------------------------------
+
+(defun split-window-horizontally-and-switch ()
+  (interactive)
+  (split-window-horizontally)
+  (other-window 1 nil)
+  (switch-to-next-buffer))
+
+(defun split-window-vertically-and-switch ()
+  (interactive)
+  (split-window-vertically)
+  (other-window 1 nil)
+  (switch-to-next-buffer))
+
+(global-set-key (kbd "C-t") 'split-window-horizontally-and-switch)
+(global-set-key (kbd "C-S-t") 'split-window-vertically-and-switch)
+(global-set-key (kbd "C-w") 'delete-window)
+(global-set-key (kbd "C-S-w") 'delete-other-windows)
+
+;; Move between windows.
+(use-package windmove
+  :config
+    (global-set-key (kbd "<M-left>")  'windmove-left)
+    (global-set-key (kbd "<M-right>") 'windmove-right)
+    (global-set-key (kbd "<M-up>")    'windmove-up)
+    (global-set-key (kbd "<M-down>")  'windmove-down))
+
+;; -----------------------------------------------------------------------------
 ;; Org mode.
 ;; -----------------------------------------------------------------------------
 

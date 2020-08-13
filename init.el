@@ -230,6 +230,7 @@
 
 ;; Indentation.
 (setq-default indent-tabs-mode nil)
+
 (setq-default tab-width 2)
 
 ;; Matching parentheses.
@@ -239,3 +240,11 @@
 
 ;; Comment/uncomment line.
 (global-set-key (kbd "C-/") 'comment-line)
+
+;; Add ruller with some column numbers at the top.
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (setq header-line-format
+                  (list (make-string 80 ? ) "|80"
+                        (make-string 17 ? ) "|100"
+                        (make-string 16 ? ) "|120"))))

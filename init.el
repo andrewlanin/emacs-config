@@ -104,6 +104,7 @@
 (global-set-key (kbd "C-v") 'yank)
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
+(global-set-key (kbd "C-k") 'kill-current-buffer)
 (global-set-key (kbd "C-q") 'save-buffers-kill-emacs)
 
 ;; Quick files.
@@ -126,7 +127,8 @@
 (use-package counsel
   :config
     (counsel-mode 1)
-    (global-set-key (kbd "C-S-f") 'counsel-rg))
+    (global-set-key (kbd "C-S-f") 'counsel-rg)
+    (global-set-key (kbd "C-b") 'counsel-switch-buffer))
 
 ;; Swiper does interactive search inside current file.
 (use-package swiper
@@ -156,8 +158,10 @@
 
 (global-set-key (kbd "C-t") 'split-window-horizontally-and-switch)
 (global-set-key (kbd "C-S-t") 'split-window-vertically-and-switch)
+(global-set-key (kbd "C-T") 'split-window-vertically-and-switch)
 (global-set-key (kbd "C-w") 'delete-window)
 (global-set-key (kbd "C-S-w") 'delete-other-windows)
+(global-set-key (kbd "C-W") 'delete-other-windows)
 
 ;; Move between windows.
 (use-package windmove
@@ -166,6 +170,12 @@
     (global-set-key (kbd "<M-right>") 'windmove-right)
     (global-set-key (kbd "<M-up>")    'windmove-up)
     (global-set-key (kbd "<M-down>")  'windmove-down))
+
+;; Change windows size.
+(global-set-key (kbd "S-M-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-M-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-M-<down>") 'shrink-window)
+(global-set-key (kbd "S-M-<up>") 'enlarge-window)
 
 ;; -----------------------------------------------------------------------------
 ;; Org mode.
@@ -218,7 +228,8 @@
         treemacs-tag-follow-cleanup            t
         treemacs-tag-follow-delay              1.5
         treemacs-user-mode-line-format         nil
-        treemacs-width                         35)
+        treemacs-width                         35
+        )
   (treemacs-follow-mode t)
   (treemacs-filewatch-mode t)
   (treemacs-fringe-indicator-mode t)

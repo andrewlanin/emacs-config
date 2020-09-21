@@ -157,11 +157,9 @@
   (switch-to-next-buffer))
 
 (global-set-key (kbd "C-t") 'split-window-horizontally-and-switch)
-(global-set-key (kbd "C-S-t") 'split-window-vertically-and-switch)
-(global-set-key (kbd "C-T") 'split-window-vertically-and-switch)
+(global-set-key (kbd "C-M-t") 'split-window-vertically-and-switch)
 (global-set-key (kbd "C-w") 'delete-window)
-(global-set-key (kbd "C-S-w") 'delete-other-windows)
-(global-set-key (kbd "C-W") 'delete-other-windows)
+(global-set-key (kbd "C-M-w") 'delete-other-windows)
 
 ;; Move between windows.
 (use-package windmove
@@ -172,10 +170,10 @@
     (global-set-key (kbd "<M-down>")  'windmove-down))
 
 ;; Change windows size.
-(global-set-key (kbd "S-M-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "S-M-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "S-M-<down>") 'shrink-window)
-(global-set-key (kbd "S-M-<up>") 'enlarge-window)
+(global-set-key (kbd "M-S-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "M-S-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "M-S-<down>") 'shrink-window)
+(global-set-key (kbd "M-S-<up>") 'enlarge-window)
 
 ;; -----------------------------------------------------------------------------
 ;; Org mode.

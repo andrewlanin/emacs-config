@@ -40,6 +40,9 @@
 ;; Turn off cursor blinking.
 (blink-cursor-mode 0)
 
+;; Turn off beep sound.
+(setq visible-bell 1)
+
 (set-face-attribute 'default nil :font "Iosevka 12")
 
 ;; Display column number in the mode line.
@@ -157,9 +160,9 @@
   (switch-to-next-buffer))
 
 (global-set-key (kbd "C-t") 'split-window-horizontally-and-switch)
-(global-set-key (kbd "C-M-t") 'split-window-vertically-and-switch)
+(global-set-key (kbd "C-S-t") 'split-window-vertically-and-switch)
 (global-set-key (kbd "C-w") 'delete-window)
-(global-set-key (kbd "C-M-w") 'delete-other-windows)
+(global-set-key (kbd "C-S-w") 'delete-other-windows)
 
 ;; Move between windows.
 (use-package windmove
@@ -239,7 +242,6 @@
 
 ;; Indentation.
 (setq-default indent-tabs-mode nil)
-
 (setq-default tab-width 2)
 
 ;; Matching parentheses.
@@ -250,10 +252,6 @@
 ;; Comment/uncomment line.
 (global-set-key (kbd "C-/") 'comment-line)
 
-;; Add ruller with some column numbers at the top.
-;; (add-hook 'prog-mode-hook
-;;          (lambda ()
-;;            (setq header-line-format
-;;                  (list (make-string 80 ? ) "|80"
-;;                        (make-string 17 ? ) "|100"
-;;                        (make-string 16 ? ) "|120"))))
+(setq-default display-fill-column-indicator-column 80)
+(setq-default display-fill-column-indicator-character (string-to-char ":"))
+(add-hook 'c++-mode-hook 'display-fill-column-indicator-mode)

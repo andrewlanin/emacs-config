@@ -13,6 +13,7 @@
  `(font-lock-function-name-face ((t (:foreground "#209000"))))
  `(font-lock-variable-name-face ((t (:foreground "black"))))
  `(vertical-border              ((t (:background "#c0c0c0" :foreground "#c0c0c0"))))
+ `(fill-column-indicator        ((t (:foreground "#d0d0d0"))))
  )
 
 (provide-theme 'abright)

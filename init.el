@@ -19,8 +19,8 @@
 ;; General settings.
 ;; -----------------------------------------------------------------------------
 
-;; Initial window size.
-(setq initial-frame-alist '((width . 120) (height . 40)))
+;; Initial window size. Tuned to fill whole screen on macbook air.
+(setq initial-frame-alist '((width . 177) (height . 42)))
 
 ;; Do not display startup buffer with basic information about emacs.
 (setq inhibit-startup-screen t)
@@ -40,10 +40,14 @@
 ;; Turn off cursor blinking.
 (blink-cursor-mode 0)
 
-;; Turn off beep sound.
-(setq visible-bell 1)
+;; Turn off both beep sound and visual blink in case of invalid command.
+;; Error text in status line should be enough.
+(setq visible-bell nil
+      ring-bell-function (lambda () nil))
 
-(set-face-attribute 'default nil :font "Iosevka 12")
+;; Font
+(set-face-attribute 'default nil :font "Iosevka 16")
+(setq-default line-spacing 0)
 
 ;; Display column number in the mode line.
 (setq column-number-mode t)
@@ -76,7 +80,8 @@
 (unless (file-exists-p custom-file) (write-region "" nil custom-file))
 (load custom-file)
 
-(load-theme 'abright t)
+;; Theme.
+(load-theme 'andrew t)
 
 ;; By default if you type something while some portion of text is selected,
 ;; emacs will add typed text to the end of selection. Activating

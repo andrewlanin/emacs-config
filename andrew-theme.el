@@ -1,8 +1,8 @@
-(deftheme abright "Emacs theme inspired by Alabaster by Nikita Prokopov")
+(deftheme andrew "My custom emacs theme inspired by Alabaster by Nikita Prokopov")
 
 (custom-theme-set-faces
- 'abright
- `(default ((t (:background "#f0f0f0" :foreground "black"))))
+ 'andrew
+ `(default ((t (:background "white" :foreground "black"))))
 
  `(font-lock-keyword-face       ((t (:foreground "black"))))
  `(font-lock-constant-face      ((t (:foreground "black"))))
@@ -16,4 +16,4 @@
  `(fill-column-indicator        ((t (:foreground "#d0d0d0"))))
  )
 
-(provide-theme 'abright)
+(provide-theme 'andrew)

@@ -164,9 +164,9 @@
   (other-window 1 nil)
   (switch-to-next-buffer))
 
-(global-set-key (kbd "C-t") 'split-window-horizontally-and-switch)
+(global-set-key (kbd "C-t")   'split-window-horizontally-and-switch)
 (global-set-key (kbd "C-S-t") 'split-window-vertically-and-switch)
-(global-set-key (kbd "C-w") 'delete-window)
+(global-set-key (kbd "C-w")   'delete-window)
 (global-set-key (kbd "C-S-w") 'delete-other-windows)
 
 ;; Move between windows.

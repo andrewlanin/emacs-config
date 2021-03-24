@@ -32,8 +32,9 @@
 ;; Make scratch buffer empty by default.
 (setq initial-scratch-message nil)
 
-;; Do not display menu bar.
-(menu-bar-mode -1)
+(unless (string-equal system-type "darwin")
+  ;; Do not display menu bar.
+  (menu-bar-mode -1))
 
 ;; Do not display tool bar.
 (tool-bar-mode -1)

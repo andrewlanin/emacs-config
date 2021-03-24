@@ -22,6 +22,10 @@
 ;; Initial window size. Tuned to fill whole screen on macbook air.
 (setq initial-frame-alist '((width . 177) (height . 42)))
 
+;; Allow to resize emacs window with pixel precision. Default resize step -
+;; one character size.
+(setq frame-resize-pixelwise t)
+
 ;; Do not display startup buffer with basic information about emacs.
 (setq inhibit-startup-screen t)
 

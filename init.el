@@ -230,6 +230,9 @@
 (setq-default display-fill-column-indicator-character (string-to-char ":"))
 (add-hook 'c++-mode-hook 'display-fill-column-indicator-mode)
 
+;; Package that is used by lsp-mode to highlight errors in code.
+(use-package flycheck)
+
 ;; Language Server Protocol.
 (use-package lsp-mode
   :hook (
@@ -237,6 +240,11 @@
          (before-save . (lambda () (when (eq 'rust-mode major-mode) (lsp-format-buffer))))
          )
   :commands lsp)
+
+;; Extended UI for lsp-mode. Adds inline errors texts, find references, etc.
+(use-package lsp-ui
+  :init
+  (setq lsp-ui-doc-enable nil))
 
 ;; Rust.
 (use-package rust-mode)

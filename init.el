@@ -194,7 +194,7 @@
 
 (use-package org-roam
   :init
-    (setq org-roam-directory "~/org")
+    (setq org-roam-directory "~/OneDrive/Brain")
     (make-directory org-roam-directory :parents))
 
 ;; -----------------------------------------------------------------------------

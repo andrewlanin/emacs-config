@@ -229,3 +229,14 @@
 (setq-default display-fill-column-indicator-column 80)
 (setq-default display-fill-column-indicator-character (string-to-char ":"))
 (add-hook 'c++-mode-hook 'display-fill-column-indicator-mode)
+
+;; Language Server Protocol.
+(use-package lsp-mode
+  :hook (
+         (rust-mode . lsp)
+         (before-save . (lambda () (when (eq 'rust-mode major-mode) (lsp-format-buffer))))
+         )
+  :commands lsp)
+
+;; Rust.
+(use-package rust-mode)

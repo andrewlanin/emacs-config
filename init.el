@@ -244,6 +244,7 @@
 ;; Language Server Protocol.
 (use-package lsp-mode
   :hook (
+         (c++-mode . lsp)
          (go-mode . lsp)
          (rust-mode . lsp)
          (before-save . (lambda () (when (eq 'rust-mode major-mode) (lsp-format-buffer))))

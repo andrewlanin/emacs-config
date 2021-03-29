@@ -258,3 +258,15 @@
 
 (use-package go-mode)
 (use-package rust-mode)
+
+;; TODO: Completion dropdown hotkey.
+;; TODO: Go to definition.
+;; TODO: Find references.
+;; TODO: lsp-ui-doc hotkey.
+;; TODO: Rename.
+;; TODO: Debug C++.
+;; TODO: Debug go.
+;; TODO: Debug rust.
+;; TODO: Shell.
+;; TODO: Magit.
+;; TODO: Common lisp.

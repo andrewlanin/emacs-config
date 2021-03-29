@@ -15,6 +15,10 @@
 (eval-when-compile (require 'use-package))
 (setq use-package-always-ensure t)
 
+;; Populate emacs own PATH from shell PATH.
+(use-package exec-path-from-shell
+  :config (exec-path-from-shell-initialize))
+
 ;; -----------------------------------------------------------------------------
 ;; General settings.
 ;; -----------------------------------------------------------------------------
@@ -233,9 +237,14 @@
 ;; Package that is used by lsp-mode to highlight errors in code.
 (use-package flycheck)
 
+;; Dropdown completion suggestions.
+(use-package company
+  :init (global-company-mode))
+
 ;; Language Server Protocol.
 (use-package lsp-mode
   :hook (
+         (go-mode . lsp)
          (rust-mode . lsp)
          (before-save . (lambda () (when (eq 'rust-mode major-mode) (lsp-format-buffer))))
          )
@@ -246,5 +255,5 @@
   :init
   (setq lsp-ui-doc-enable nil))
 
-;; Rust.
+(use-package go-mode)
 (use-package rust-mode)

@@ -219,6 +219,7 @@
 (use-package treemacs
   :config
   (setq treemacs-no-png-images t
+        treemacs-space-between-root-nodes nil
         treemacs-persist-file (expand-file-name "treemacs-workspaces"
                                                 user-emacs-directory))
   (treemacs-follow-mode t)

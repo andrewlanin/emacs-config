@@ -267,6 +267,7 @@
          (before-save . (lambda () (when (eq 'rust-mode major-mode)
                                      (lsp-format-buffer))))
          )
+  :bind (("s-r" . lsp-rename))
   :commands lsp)
 
 ;; Extended UI for lsp-mode. Adds inline errors texts, find references, etc.
@@ -276,12 +277,15 @@
   ;; right of the main text. That generates a lot of content flickering during
   ;; typing. I'd rather see diagnostics on demand.
   (setq lsp-ui-sideline-enable nil)
-  (setq lsp-ui-doc-enable nil))
+  (setq lsp-ui-doc-enable nil)
+  :bind (("s-i" . lsp-ui-imenu)))
 
 (use-package go-mode)
 
 (use-package rust-mode
-  :bind (("C-S-t" . rust-test)))
+  :bind (("s-c" . rust-check)
+         ("s-b" . rust-build)
+         ("s-t" . rust-test)))
 
 ;; TODO: Completion dropdown hotkey.
 ;; TODO: Go to definition.

@@ -257,7 +257,9 @@
   (setq lsp-ui-doc-enable nil))
 
 (use-package go-mode)
-(use-package rust-mode)
+
+(use-package rust-mode
+  :bind (("C-S-t" . rust-test)))
 
 ;; TODO: Completion dropdown hotkey.
 ;; TODO: Go to definition.

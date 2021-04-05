@@ -4,6 +4,12 @@
  'andrew
  `(default ((t (:background "white" :foreground "black"))))
 
+ ;; GUI
+ `(fringe                       ((t (:background "white"))))
+ `(vertical-border              ((t (:foreground "#d0d0d0"))))
+ `(fill-column-indicator        ((t (:foreground "#d0d0d0"))))
+
+ ;; Syntax
  `(font-lock-keyword-face       ((t (:foreground "black"))))
  `(font-lock-constant-face      ((t (:foreground "black"))))
  `(font-lock-type-face          ((t (:foreground "black"))))
@@ -12,8 +18,6 @@
  `(font-lock-comment-face       ((t (:foreground "darkmagenta"))))
  `(font-lock-function-name-face ((t (:foreground "black"))))
  `(font-lock-variable-name-face ((t (:foreground "black"))))
- `(vertical-border              ((t (:background "#c0c0c0" :foreground "#c0c0c0"))))
- `(fill-column-indicator        ((t (:foreground "#d0d0d0"))))
  )
 
 (provide-theme 'andrew)

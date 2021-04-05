@@ -216,7 +216,8 @@
 (use-package treemacs
   :config
   (setq treemacs-no-png-images t
-        treemacs-persist-file (expand-file-name "treemacs-workspaces" user-emacs-directory))
+        treemacs-persist-file (expand-file-name "treemacs-workspaces"
+                                                user-emacs-directory))
   (treemacs-follow-mode t)
   (treemacs-filewatch-mode t)
   (treemacs-fringe-indicator-mode t)
@@ -241,6 +242,7 @@
 (setq-default display-fill-column-indicator-column 80)
 (setq-default display-fill-column-indicator-character (string-to-char ":"))
 (add-hook 'c++-mode-hook 'display-fill-column-indicator-mode)
+(add-hook 'emacs-lisp-mode-hook 'display-fill-column-indicator-mode)
 
 ;; Package that is used by lsp-mode to highlight errors in code.
 (use-package flycheck)
@@ -255,16 +257,17 @@
          (c++-mode . lsp)
          (go-mode . lsp)
          (rust-mode . lsp)
-         (before-save . (lambda () (when (eq 'rust-mode major-mode) (lsp-format-buffer))))
+         (before-save . (lambda () (when (eq 'rust-mode major-mode)
+                                     (lsp-format-buffer))))
          )
   :commands lsp)
 
 ;; Extended UI for lsp-mode. Adds inline errors texts, find references, etc.
 (use-package lsp-ui
   :init
-  ;; lsp-ui-sideline renders compilation errors in text buffer itself to the right
-  ;; of the main text. That generates a lot of content flickering during typing.
-  ;; I'd rather see diagnostics on demand.
+  ;; lsp-ui-sideline renders compilation errors in text buffer itself to the
+  ;; right of the main text. That generates a lot of content flickering during
+  ;; typing. I'd rather see diagnostics on demand.
   (setq lsp-ui-sideline-enable nil)
   (setq lsp-ui-doc-enable nil))
 

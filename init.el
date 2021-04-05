@@ -253,6 +253,7 @@
 
 ;; Language Server Protocol.
 (use-package lsp-mode
+  :init (setq lsp-headerline-breadcrumb-enable nil)
   :hook (
          (c++-mode . lsp)
          (go-mode . lsp)

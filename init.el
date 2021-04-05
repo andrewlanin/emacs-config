@@ -245,8 +245,10 @@
 
 (setq-default display-fill-column-indicator-column 80)
 (setq-default display-fill-column-indicator-character (string-to-char ":"))
+(add-hook 'c-mode-hook 'display-fill-column-indicator-mode)
 (add-hook 'c++-mode-hook 'display-fill-column-indicator-mode)
 (add-hook 'emacs-lisp-mode-hook 'display-fill-column-indicator-mode)
+(add-hook 'rust-mode-hook 'display-fill-column-indicator-mode)
 
 ;; Package that is used by lsp-mode to highlight errors in code.
 (use-package flycheck)

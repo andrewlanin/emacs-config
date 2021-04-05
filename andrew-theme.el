@@ -17,6 +17,7 @@
  `(font-lock-builtin-face       ((t (:foreground "black"))))
  `(font-lock-string-face        ((t (:foreground "#0000ff"))))
  `(font-lock-comment-face       ((t (:foreground "darkmagenta"))))
+ `(font-lock-doc-face           ((t (:foreground "darkmagenta"))))
  `(font-lock-function-name-face ((t (:foreground "black"))))
  `(font-lock-variable-name-face ((t (:foreground "black"))))
  )

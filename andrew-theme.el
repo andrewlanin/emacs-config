@@ -8,6 +8,7 @@
  `(fringe                       ((t (:background "white"))))
  `(vertical-border              ((t (:foreground "#d0d0d0"))))
  `(fill-column-indicator        ((t (:foreground "#d0d0d0"))))
+ `(hl-line                      ((t (:background "#d0d0d0"))))
 
  ;; Syntax
  `(font-lock-keyword-face       ((t (:foreground "black"))))

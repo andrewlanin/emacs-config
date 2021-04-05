@@ -31,6 +31,9 @@
 ;; General settings.
 ;; -----------------------------------------------------------------------------
 
+;; Collect garbage less often.
+(setq gc-cons-threshold (* 100 1024 1024))
+
 ;; Initial window size. Tuned to fill whole screen on macbook air.
 (setq initial-frame-alist '((width . 177) (height . 42)))
 

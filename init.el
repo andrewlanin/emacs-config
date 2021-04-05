@@ -254,6 +254,10 @@
 ;; Extended UI for lsp-mode. Adds inline errors texts, find references, etc.
 (use-package lsp-ui
   :init
+  ;; lsp-ui-sideline renders compilation errors in text buffer itself to the right
+  ;; of the main text. That generates a lot of content flickering during typing.
+  ;; I'd rather see diagnostics on demand.
+  (setq lsp-ui-sideline-enable nil)
   (setq lsp-ui-doc-enable nil))
 
 (use-package go-mode)

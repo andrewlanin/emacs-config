@@ -8,3 +8,12 @@ custom.el
 # Something related to auto save. I turned it off in the config but the
 # directory keep appearing.
 auto-save-list
+
+# Persisted state of treemacs package.
+treemacs-workspaces
+
+# Index built from org files by org-roam package.
+org-roam.db
+
+.cache
+.lsp-session-*

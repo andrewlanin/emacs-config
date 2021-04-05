@@ -15,6 +15,14 @@
 (eval-when-compile (require 'use-package))
 (setq use-package-always-ensure t)
 
+;; bind-key module is part of use-package. It helps to reliably bind keys.
+;; When binding hotkey with default emacs API like global-set-key, it still
+;; can be rebound later to other function by one of the active minor modes.
+;; bind-key module provides bind-key* function that helps to create key
+;; binding that will stay valid no matter what. It is useful for basic bindings
+;; that should work everywhere, like C-c, C-v.
+(require 'bind-key)
+
 ;; Populate emacs own PATH from shell PATH.
 (use-package exec-path-from-shell
   :config (exec-path-from-shell-initialize))
@@ -113,19 +121,19 @@
 (setq mac-right-option-modifier 'nil)
 
 ;; Basic actions.
-(global-set-key (kbd "C-p") 'find-file)
-(global-set-key (kbd "C-s") 'save-buffer)
-(global-set-key (kbd "C-S-s") 'write-file) ; Save as...
-(global-set-key (kbd "C-x") 'kill-region)
-(global-set-key (kbd "C-c") 'kill-ring-save)
-(global-set-key (kbd "C-v") 'yank)
-(global-set-key (kbd "C-z") 'undo)
-(global-set-key (kbd "C-a") 'mark-whole-buffer)
-(global-set-key (kbd "C-k") 'kill-current-buffer)
-(global-set-key (kbd "C-q") 'save-buffers-kill-emacs)
+(bind-key* "C-p" 'find-file)
+(bind-key* "C-s" 'save-buffer)
+(bind-key* "C-S-s" 'write-file) ; Save as...
+(bind-key* "C-x" 'kill-region)
+(bind-key* "C-c" 'kill-ring-save)
+(bind-key* "C-v" 'yank)
+(bind-key* "C-z" 'undo)
+(bind-key* "C-a" 'mark-whole-buffer)
+(bind-key* "C-k" 'kill-current-buffer)
+(bind-key* "C-q" 'save-buffers-kill-emacs)
 
 ;; Quick files.
-(global-set-key (kbd "\e\ec") (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
+(bind-key* "\e\ec" (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
 
 ;; -----------------------------------------------------------------------------
 ;; General extensions.
@@ -144,18 +152,18 @@
 (use-package counsel
   :config
     (counsel-mode 1)
-    (global-set-key (kbd "C-S-f") 'counsel-rg)
-    (global-set-key (kbd "C-b")   'counsel-switch-buffer))
+    (bind-key* "C-S-f" 'counsel-rg)
+    (bind-key* "C-b"   'counsel-switch-buffer))
 
 ;; Swiper does interactive search inside current file.
 (use-package swiper
   :config
-    (global-set-key (kbd "C-f") 'swiper-isearch))
+    (bind-key* "C-f" 'swiper-isearch))
 
 ;; Replace command with nice feedback.
 (use-package visual-regexp
   :config
-    (define-key global-map (kbd "C-r") 'vr/replace))
+    (bind-key* "C-r" 'vr/replace))
 
 ;; -----------------------------------------------------------------------------
 ;; Windows.
@@ -173,24 +181,24 @@
   (other-window 1 nil)
   (switch-to-next-buffer))
 
-(global-set-key (kbd "C-t")   'split-window-horizontally-and-switch)
-(global-set-key (kbd "C-S-t") 'split-window-vertically-and-switch)
-(global-set-key (kbd "C-w")   'delete-window)
-(global-set-key (kbd "C-S-w") 'delete-other-windows)
+(bind-key* "C-t"   'split-window-horizontally-and-switch)
+(bind-key* "C-S-t" 'split-window-vertically-and-switch)
+(bind-key* "C-w"   'delete-window)
+(bind-key* "C-S-w" 'delete-other-windows)
 
 ;; Move between windows.
 (use-package windmove
   :config
-    (global-set-key (kbd "<M-left>")  'windmove-left)
-    (global-set-key (kbd "<M-right>") 'windmove-right)
-    (global-set-key (kbd "<M-up>")    'windmove-up)
-    (global-set-key (kbd "<M-down>")  'windmove-down))
+    (bind-key* "<M-left>"  'windmove-left)
+    (bind-key* "<M-right>" 'windmove-right)
+    (bind-key* "<M-up>"    'windmove-up)
+    (bind-key* "<M-down>"  'windmove-down))
 
 ;; Change windows size.
-(global-set-key (kbd "M-S-<left>")  'shrink-window-horizontally)
-(global-set-key (kbd "M-S-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "M-S-<down>")  'shrink-window)
-(global-set-key (kbd "M-S-<up>")    'enlarge-window)
+(bind-key* "M-S-<left>"  'shrink-window-horizontally)
+(bind-key* "M-S-<right>" 'enlarge-window-horizontally)
+(bind-key* "M-S-<down>"  'shrink-window)
+(bind-key* "M-S-<up>"    'enlarge-window)
 
 ;; -----------------------------------------------------------------------------
 ;; Org mode.

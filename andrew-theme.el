@@ -9,6 +9,7 @@
  `(vertical-border              ((t (:foreground "#d0d0d0"))))
  `(fill-column-indicator        ((t (:foreground "#d0d0d0"))))
  `(hl-line                      ((t (:background "#d0d0d0"))))
+ `(line-number                  ((t (:foreground "#e0e0e0"))))
 
  ;; Syntax
  `(font-lock-keyword-face       ((t (:foreground "black"))))

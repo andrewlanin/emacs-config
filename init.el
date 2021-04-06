@@ -243,12 +243,19 @@
 ;; Comment/uncomment line.
 (global-set-key (kbd "C-/") 'comment-line)
 
+;; Line length limit.
 (setq-default display-fill-column-indicator-column 80)
 (setq-default display-fill-column-indicator-character (string-to-char ":"))
+(add-hook 'emacs-lisp-mode-hook 'display-fill-column-indicator-mode)
 (add-hook 'c-mode-hook 'display-fill-column-indicator-mode)
 (add-hook 'c++-mode-hook 'display-fill-column-indicator-mode)
-(add-hook 'emacs-lisp-mode-hook 'display-fill-column-indicator-mode)
 (add-hook 'rust-mode-hook 'display-fill-column-indicator-mode)
+
+;; Line numbers.
+(add-hook 'emacs-lisp-mode-hook 'display-line-numbers-mode)
+(add-hook 'c-mode-hook 'display-line-numbers-mode)
+(add-hook 'c++-mode-hook 'display-line-numbers-mode)
+(add-hook 'rust-mode-hook 'display-line-numbers-mode)
 
 ;; Package that is used by lsp-mode to highlight errors in code.
 (use-package flycheck)

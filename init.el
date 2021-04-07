@@ -225,7 +225,8 @@
   (treemacs-follow-mode t)
   (treemacs-filewatch-mode t)
   (treemacs-fringe-indicator-mode t)
-  (global-set-key (kbd "<f2>") 'treemacs))
+  (global-set-key (kbd "<f2>") 'treemacs)
+  (treemacs))
 
 ;; -----------------------------------------------------------------------------
 ;; Programming.

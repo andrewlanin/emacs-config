@@ -271,7 +271,9 @@
          (c++-mode . lsp)
          (go-mode . lsp)
          (rust-mode . lsp)
-         (before-save . (lambda () (when (eq 'rust-mode major-mode)
+         (before-save . (lambda () (when (or
+                                          (eq major-mode 'rust-mode)
+                                          (eq major-mode 'go-mode))
                                      (lsp-format-buffer))))
          )
   :bind (("s-r" . lsp-rename))

@@ -296,7 +296,6 @@
          ("s-b" . rust-build)
          ("s-t" . rust-test)))
 
-;; TODO: Correctly work with cmake projects.
 ;; TODO: Completion dropdown hotkey.
 ;; TODO: Go to definition.
 ;; TODO: Find references.

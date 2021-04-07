@@ -288,7 +288,9 @@
   ;; typing. I'd rather see diagnostics on demand.
   (setq lsp-ui-sideline-enable nil)
   (setq lsp-ui-doc-enable nil)
-  :bind (("s-i" . lsp-ui-imenu)))
+  :bind (("s-i" . lsp-ui-imenu)
+         ("s-d" . lsp-find-definition)
+         ("s-r" . lsp-find-references))
 
 (use-package go-mode)
 
@@ -298,8 +300,6 @@
          ("s-t" . rust-test)))
 
 ;; TODO: Completion dropdown hotkey.
-;; TODO: Go to definition.
-;; TODO: Find references.
 ;; TODO: lsp-ui-doc hotkey.
 ;; TODO: Debug C++.
 ;; TODO: Debug go.

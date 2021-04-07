@@ -271,11 +271,9 @@
   :hook ((c++-mode . lsp)
          (go-mode . lsp)
          (rust-mode . lsp)
-         (before-save . (lambda () (when (or
-                                          (eq major-mode 'rust-mode)
-                                          (eq major-mode 'go-mode))
-                                     (lsp-format-buffer))))
-         )
+         (before-save . (lambda ()
+                          (when (member major-mode (list 'rust-mode 'go-mode))
+                            (lsp-format-buffer)))))
   :bind (("s-r" . lsp-rename))
   :commands lsp)
 
@@ -289,7 +287,7 @@
     (setq lsp-ui-doc-enable nil)
   :bind (("s-i" . lsp-ui-imenu)
          ("s-d" . lsp-find-definition)
-         ("s-r" . lsp-find-references))
+         ("s-r" . lsp-find-references)))
 
 (use-package go-mode)
 

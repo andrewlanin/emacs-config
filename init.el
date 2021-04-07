@@ -268,8 +268,7 @@
 ;; Language Server Protocol.
 (use-package lsp-mode
   :init (setq lsp-headerline-breadcrumb-enable nil)
-  :hook (
-         (c++-mode . lsp)
+  :hook ((c++-mode . lsp)
          (go-mode . lsp)
          (rust-mode . lsp)
          (before-save . (lambda () (when (or
@@ -283,11 +282,11 @@
 ;; Extended UI for lsp-mode. Adds inline errors texts, find references, etc.
 (use-package lsp-ui
   :init
-  ;; lsp-ui-sideline renders compilation errors in text buffer itself to the
-  ;; right of the main text. That generates a lot of content flickering during
-  ;; typing. I'd rather see diagnostics on demand.
-  (setq lsp-ui-sideline-enable nil)
-  (setq lsp-ui-doc-enable nil)
+    ;; lsp-ui-sideline renders compilation errors in text buffer itself to the
+    ;; right of the main text. That generates a lot of content flickering during
+    ;; typing. I'd rather see diagnostics on demand.
+    (setq lsp-ui-sideline-enable nil)
+    (setq lsp-ui-doc-enable nil)
   :bind (("s-i" . lsp-ui-imenu)
          ("s-d" . lsp-find-definition)
          ("s-r" . lsp-find-references))

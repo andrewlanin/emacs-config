@@ -296,14 +296,13 @@
          ("s-b" . rust-build)
          ("s-t" . rust-test)))
 
+;; TODO: Correctly work with cmake projects.
 ;; TODO: Completion dropdown hotkey.
 ;; TODO: Go to definition.
 ;; TODO: Find references.
 ;; TODO: lsp-ui-doc hotkey.
-;; TODO: Rename.
 ;; TODO: Debug C++.
 ;; TODO: Debug go.
 ;; TODO: Debug rust.
-;; TODO: Shell.
 ;; TODO: Magit.
 ;; TODO: Common lisp.

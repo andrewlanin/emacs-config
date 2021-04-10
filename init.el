@@ -251,12 +251,14 @@
 (add-hook 'c-mode-hook 'display-fill-column-indicator-mode)
 (add-hook 'c++-mode-hook 'display-fill-column-indicator-mode)
 (add-hook 'rust-mode-hook 'display-fill-column-indicator-mode)
+(add-hook 'go-mode-hook 'display-fill-column-indicator-mode)
 
 ;; Line numbers.
 (add-hook 'emacs-lisp-mode-hook 'display-line-numbers-mode)
 (add-hook 'c-mode-hook 'display-line-numbers-mode)
 (add-hook 'c++-mode-hook 'display-line-numbers-mode)
 (add-hook 'rust-mode-hook 'display-line-numbers-mode)
+(add-hook 'go-mode-hook 'display-line-numbers-mode)
 
 ;; Package that is used by lsp-mode to highlight errors in code.
 (use-package flycheck)

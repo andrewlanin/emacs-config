@@ -289,7 +289,7 @@
     (setq lsp-ui-doc-enable nil)
   :bind (("s-i" . lsp-ui-imenu)
          ("s-d" . lsp-find-definition)
-         ("s-r" . lsp-find-references)))
+         ("s-e" . lsp-find-references)))
 
 (use-package go-mode)
 

@@ -274,7 +274,7 @@
          (go-mode . lsp)
          (rust-mode . lsp)
          (before-save . (lambda ()
-                          (when (member major-mode (list 'rust-mode 'go-mode))
+                          (when (member major-mode (list 'go-mode))
                             (lsp-format-buffer)))))
   :bind (("s-r" . lsp-rename))
   :commands lsp)

@@ -21,6 +21,7 @@
  `(font-lock-doc-face           ((t (:foreground "darkmagenta"))))
  `(font-lock-function-name-face ((t (:foreground "black"))))
  `(font-lock-variable-name-face ((t (:foreground "black"))))
+ `(rust-unsafe-face             ((t (:background "white" :foreground "black"))))
  )
 
 (provide-theme 'andrew)

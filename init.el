@@ -274,7 +274,7 @@
          (go-mode . lsp)
          (rust-mode . lsp)
          (before-save . (lambda ()
-                          (when (member major-mode (list 'go-mode))
+                          (when (member major-mode (list 'go-mode 'rust-mode))
                             (lsp-format-buffer)))))
   :bind (("s-r" . lsp-rename))
   :commands lsp)
@@ -294,6 +294,9 @@
 (use-package go-mode)
 
 (use-package rust-mode
+  :init
+  (setq rust-indent-offset 2)
+
   :bind (("s-c" . rust-check)
          ("s-b" . rust-build)
          ("s-t" . rust-test)))

@@ -260,6 +260,11 @@
 (add-hook 'rust-mode-hook 'display-line-numbers-mode)
 (add-hook 'go-mode-hook 'display-line-numbers-mode)
 
+;; C++ google-like code style.
+(load (expand-file-name "google-c-style.el" user-emacs-directory))
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+
 ;; Package that is used by lsp-mode to highlight errors in code.
 (use-package flycheck)
 

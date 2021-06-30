@@ -305,7 +305,7 @@
 
 (use-package rust-mode
   :init
-  (setq rust-indent-offset 2)
+  (setq rust-indent-offset 4)
 
   :bind (("s-c" . rust-check)
          ("s-b" . rust-build)

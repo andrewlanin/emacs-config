@@ -250,6 +250,7 @@
 (add-hook 'emacs-lisp-mode-hook 'display-fill-column-indicator-mode)
 (add-hook 'c-mode-hook 'display-fill-column-indicator-mode)
 (add-hook 'c++-mode-hook 'display-fill-column-indicator-mode)
+(add-hook 'objc-mode-hook 'display-fill-column-indicator-mode)
 (add-hook 'rust-mode-hook 'display-fill-column-indicator-mode)
 (add-hook 'go-mode-hook 'display-fill-column-indicator-mode)
 
@@ -257,8 +258,12 @@
 (add-hook 'emacs-lisp-mode-hook 'display-line-numbers-mode)
 (add-hook 'c-mode-hook 'display-line-numbers-mode)
 (add-hook 'c++-mode-hook 'display-line-numbers-mode)
+(add-hook 'objc-mode-hook 'display-line-numbers-mode)
 (add-hook 'rust-mode-hook 'display-line-numbers-mode)
 (add-hook 'go-mode-hook 'display-line-numbers-mode)
+
+;; Objective-C++.
+(add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
 
 ;; C++ google-like code style.
 (load (expand-file-name "google-c-style.el" user-emacs-directory))

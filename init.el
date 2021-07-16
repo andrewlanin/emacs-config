@@ -283,7 +283,17 @@
 
 ;; Dropdown completion suggestions.
 (use-package company
-  :init (global-company-mode))
+  :init
+  ;; Turn off automatic completion.
+  (setq company-idle-delay nil)
+
+  :config
+  (global-company-mode)
+
+  :bind (
+         ;; Invoke completion on key press.
+         ("M-RET" . company-complete-common)
+         ))
 
 ;; Language Server Protocol.
 (use-package lsp-mode

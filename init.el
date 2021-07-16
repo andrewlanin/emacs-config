@@ -287,7 +287,11 @@
 
 ;; Language Server Protocol.
 (use-package lsp-mode
-  :init (setq lsp-headerline-breadcrumb-enable nil)
+  :init
+  (setq lsp-headerline-breadcrumb-enable nil)
+  ;; Disable automatic includes.
+  (setq lsp-completion-enable-additional-text-edit nil)
+
   :hook ((c++-mode . lsp)
          (go-mode . lsp)
          (rust-mode . lsp)

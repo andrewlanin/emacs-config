@@ -333,7 +333,6 @@
          ("s-b" . rust-build)
          ("s-t" . rust-test)))
 
-;; TODO: Completion dropdown hotkey.
 ;; TODO: lsp-ui-doc hotkey.
 ;; TODO: Debug C++.
 ;; TODO: Debug go.

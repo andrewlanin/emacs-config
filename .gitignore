@@ -1,5 +1,7 @@
-# Packages installed from the repository.
-elpa
+# Packages installed by straight.el.
+straight/build-cache.el
+straight/build/
+straight/repos/
 
 # Setting made in graphical interface go into custom.el.
 # I don't use it and prefer to put everything into init.el.
@@ -15,5 +17,6 @@ treemacs-workspaces
 # Index built from org files by org-roam package.
 org-roam.db
 
+# Some trash.
 .cache
 .lsp-session-*

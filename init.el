@@ -273,10 +273,10 @@
 ;; Objective-C++.
 (add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
 
-;; C++ google-like code style.
-(load (expand-file-name "google-c-style.el" user-emacs-directory))
-(add-hook 'c-mode-common-hook 'google-set-c-style)
-(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+;; C and C++ code style config.
+(load (expand-file-name "andrew-c-style.el" user-emacs-directory))
+(add-hook 'c-mode-common-hook 'c-style-setup)
+(add-hook 'c-mode-common-hook 'c-newline-indent)
 
 ;; Package that is used by lsp-mode to highlight errors in code.
 (use-package flycheck)

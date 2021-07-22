@@ -54,6 +54,8 @@
                         (member-init-intro . ++)
                         (inher-intro . ++)
                         (comment-intro . 0)
+                        (arglist-intro . ++)
+                        (arglist-cont-nonempty . ++)
                         (arglist-close . c-lineup-arglist)
                         (topmost-intro . 0)
                         (block-open . 0)

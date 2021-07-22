@@ -278,6 +278,9 @@
 (add-hook 'c-mode-common-hook 'c-style-setup)
 (add-hook 'c-mode-common-hook 'c-newline-indent)
 
+;; Git plugin.
+(use-package magit)
+
 ;; Package that is used by lsp-mode to highlight errors in code.
 (use-package flycheck)
 
@@ -337,4 +340,3 @@
 ;; TODO: Debug C++.
 ;; TODO: Debug go.
 ;; TODO: Debug rust.
-;; TODO: Magit.

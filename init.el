@@ -109,7 +109,7 @@
 (load custom-file)
 
 ;; Theme.
-(load-theme 'andrew t)
+(load-theme 'andrews t)
 
 ;; By default if you type something while some portion of text is selected,
 ;; emacs will add typed text to the end of selection. Activating
@@ -274,9 +274,8 @@
 (add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
 
 ;; C and C++ code style config.
-(load (expand-file-name "andrew-c-style.el" user-emacs-directory))
-(add-hook 'c-mode-common-hook 'c-style-setup)
-(add-hook 'c-mode-common-hook 'c-newline-indent)
+(load (expand-file-name "andrews-c-style.el" user-emacs-directory))
+(add-hook 'c-mode-common-hook 'andrews-c-style-setup)
 
 ;; Git plugin.
 (use-package magit)

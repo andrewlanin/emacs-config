@@ -11,10 +11,11 @@
 ;; b) the "Artistic License".
 
 ;;;###autoload
-(defconst andrew-c-style
-  `((c-recognize-knr-p . nil)
-    (c-basic-offset . 2)
-    (indent-tabs-mode . nil)
+(defconst andrews-c-style
+  `((indent-tabs-mode . t)
+    (tab-width . 4)
+    (c-basic-offset . 4)
+    (c-recognize-knr-p . nil)
     (c-comment-only-line-offset . 0)
     (c-hanging-braces-alist . ((defun-open after)
                                (defun-close before after)
@@ -71,16 +72,13 @@
   "Andrew's C and C++ Programming Style.")
 
 ;;;###autoload
-(defun c-style-setup ()
+(defun andrews-c-style-setup ()
   (interactive)
   (make-local-variable 'c-tab-always-indent)
   (setq c-tab-always-indent t)
-  (c-add-style "Andrew" andrew-c-style t))
-
-;;;###autoload
-(defun c-newline-indent ()
-  (interactive)
+  (c-add-style "Andrew" andrews-c-style t)
   (define-key c-mode-base-map "\C-m" 'newline-and-indent)
-  (define-key c-mode-base-map [ret] 'newline-and-indent))
+  (define-key c-mode-base-map [ret] 'newline-and-indent)
+  (define-key c-mode-base-map [backspace] 'backward-delete-char))
 
-(provide 'c-style-setup)
+(provide 'andrews-c-style-setup)

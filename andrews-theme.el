@@ -1,7 +1,7 @@
-(deftheme andrew "My custom emacs theme inspired by Alabaster by Nikita Prokopov")
+(deftheme andrews "My custom emacs theme inspired by Alabaster by Nikita Prokopov")
 
 (custom-theme-set-faces
- 'andrew
+ 'andrews
  `(default ((t (:background "white" :foreground "black"))))
 
  ;; GUI
@@ -24,4 +24,4 @@
  `(rust-unsafe-face             ((t (:background "white" :foreground "black"))))
  )
 
-(provide-theme 'andrew)
+(provide-theme 'andrews)

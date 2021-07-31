@@ -147,34 +147,50 @@
 (bind-key* "\e\ec" (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
 
 ;; -----------------------------------------------------------------------------
-;; General extensions.
+;; Search, navigation.
 ;; -----------------------------------------------------------------------------
 
-;; Ivy is a general-purpose completion framework for emacs.
-(use-package ivy
-  :config
-    (ivy-mode 1)
-    ;; Display current variant number and total variants in the completion
-    ;; buffer.
-    (setq ivy-count-format "(%d/%d) "))
+;; Add fuzzy matching to default emacs completion routine.
+(use-package orderless
+  :init
+  (setq completion-styles '(orderless)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion)))))
 
-;; Counsel is emacs command enhancer. It replaces commands like M-x, find-file
-;; and many other, adding nice completion to them.
-(use-package counsel
-  :config
-    (counsel-mode 1)
-    (bind-key* "C-S-f" 'counsel-rg)
-    (bind-key* "C-b"   'counsel-switch-buffer))
+;; Generic completion UI.
+(use-package vertico
+  :init
+  (vertico-mode)
+  (setq vertico-cycle t))
 
-;; Swiper does interactive search inside current file.
-(use-package swiper
-  :config
-    (bind-key* "C-f" 'swiper-isearch))
+;; Add more relevant information to completion variants. For example, during
+;; M-x displays description for each function.
+(use-package marginalia
+  :init
+  (marginalia-mode)
+
+  :bind (
+         ;; Switch between more and less detailed annotations.
+         ("M-a" . marginalia-cycle)
+         :map minibuffer-local-map
+         ("M-a" . marginalia-cycle)))
+
+;; Persist history over Emacs restarts. Vertico sorts by history position.
+(use-package savehist
+  :init
+  (savehist-mode))
+
+;; Enhanced navigation functions.
+(use-package consult
+  :bind (("C-f" . consult-line)
+         ("C-S-f" . consult-ripgrep)
+         ("C-b" . consult-buffer)
+         ("C-g" . consult-goto-line)))
 
 ;; Replace command with nice feedback.
 (use-package visual-regexp
   :config
-    (bind-key* "C-r" 'vr/replace))
+  (bind-key* "C-r" 'vr/replace))
 
 ;; -----------------------------------------------------------------------------
 ;; Windows.

@@ -74,7 +74,9 @@
       ring-bell-function (lambda () nil))
 
 ;; Font
-(set-face-attribute 'default nil :font "Iosevka 16")
+(if (eq system-type 'darwin)
+    (set-face-attribute 'default nil :font "Iosevka 16")
+    (set-face-attribute 'default nil :font "Iosevka 12"))
 (setq-default line-spacing 0)
 
 ;; Display column number in the mode line.

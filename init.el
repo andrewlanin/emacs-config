@@ -235,10 +235,22 @@
 ;; Org mode.
 ;; -----------------------------------------------------------------------------
 
+(use-package org
+  :init
+  (setq org-support-shift-select t))
+
 (use-package org-roam
   :init
-    (setq org-roam-directory "~/OneDrive/Brain")
-    (make-directory org-roam-directory :parents))
+  (setq org-roam-directory "~/OneDrive/Brain")
+  (make-directory org-roam-directory :parents)
+  (setq org-roam-dailies-directory "") ; Relative to org-roam-directory
+  (setq org-roam-v2-ack t) ; Use version 2 of org-roam
+
+  :config
+  (org-roam-setup)
+
+  :bind
+  (("C-o" . org-roam-node-find)))
 
 ;; -----------------------------------------------------------------------------
 ;; Tree.

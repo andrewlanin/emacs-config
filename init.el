@@ -144,6 +144,8 @@
 (bind-key* "C-a" 'mark-whole-buffer)
 (bind-key* "C-k" 'kill-current-buffer)
 (bind-key* "C-q" 'save-buffers-kill-emacs)
+(bind-key* "C--" 'text-scale-decrease)
+(bind-key* "C-=" 'text-scale-increase)
 
 ;; Quick files.
 (bind-key* "\e\ec" (lambda () (interactive) (find-file "~/.emacs.d/init.el")))

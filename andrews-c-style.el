@@ -13,8 +13,8 @@
 ;;;###autoload
 (defconst andrews-c-style
   `((indent-tabs-mode . t)
-    (tab-width . 4)
-    (c-basic-offset . 4)
+    (tab-width . 2)
+    (c-basic-offset . 2)
     (c-recognize-knr-p . nil)
     (c-comment-only-line-offset . 0)
     (c-hanging-braces-alist . ((defun-open after)

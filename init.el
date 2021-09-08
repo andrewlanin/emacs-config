@@ -357,6 +357,11 @@
          ("s-d" . lsp-find-definition)
          ("s-e" . lsp-find-references)))
 
+(use-package cmake-mode)
+
+(use-package metal-mode
+  :straight (metal-mode :type git :host github :repo "masfj/metal-mode"))
+
 (use-package go-mode)
 
 (use-package rust-mode
@@ -366,6 +371,18 @@
   :bind (("s-c" . rust-check)
          ("s-b" . rust-build)
          ("s-t" . rust-test)))
+
+(add-hook 'json-mode-hook
+          (lambda ()
+            (make-local-variable 'js-indent-level)
+            (setq js-indent-level 2)))
+
+(add-hook 'js-mode-hook
+          (lambda ()
+            (make-local-variable 'js-indent-level)
+            (setq js-indent-level 2)))
+
+(use-package jinja2-mode)
 
 ;; TODO: lsp-ui-doc hotkey.
 ;; TODO: Debug C++.

@@ -74,11 +74,10 @@
 ;;;###autoload
 (defun andrews-c-style-setup ()
   (interactive)
-  (make-local-variable 'c-tab-always-indent)
-  (setq c-tab-always-indent t)
   (c-add-style "Andrew" andrews-c-style t)
   (define-key c-mode-base-map "\C-m" 'newline-and-indent)
   (define-key c-mode-base-map [ret] 'newline-and-indent)
-  (define-key c-mode-base-map [backspace] 'backward-delete-char))
+  (define-key c-mode-base-map [backspace] 'backward-delete-char)
+  (define-key c-mode-base-map "\C-i" 'c-indent-line-or-region))
 
 (provide 'andrews-c-style-setup)

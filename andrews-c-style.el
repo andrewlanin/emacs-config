@@ -78,6 +78,7 @@
   (define-key c-mode-base-map "\C-m" 'newline-and-indent)
   (define-key c-mode-base-map [ret] 'newline-and-indent)
   (define-key c-mode-base-map [backspace] 'backward-delete-char)
+  (define-key c-mode-base-map [tab] 'tab-to-tab-stop)
   (define-key c-mode-base-map "\C-i" 'c-indent-line-or-region))
 
 (provide 'andrews-c-style-setup)

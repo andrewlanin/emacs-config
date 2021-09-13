@@ -146,7 +146,6 @@
 (bind-key* "C-q" 'save-buffers-kill-emacs)
 (bind-key* "C--" 'text-scale-decrease)
 (bind-key* "C-=" 'text-scale-increase)
-(bind-key* [tab] 'tab-to-tab-stop)
 
 ;; Quick files.
 (bind-key* "\e\ec" (lambda () (interactive) (find-file "~/.emacs.d/init.el")))

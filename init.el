@@ -388,3 +388,5 @@
 ;; TODO: Debug C++.
 ;; TODO: Debug go.
 ;; TODO: Debug rust.
+;; TODO: Remote workflow with tramp.
+;; TODO: Special settings for home and work.

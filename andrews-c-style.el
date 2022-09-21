@@ -68,7 +68,7 @@
                         (statement-case-open . +)
                         (statement-case-intro . +) ; case w/o {
                         (access-label . -)
-                        (innamespace . 0))))
+                        (innamespace . -))))
   "Andrew's C and C++ Programming Style.")
 
 ;;;###autoload

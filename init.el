@@ -274,7 +274,7 @@
 
 ;; Indentation.
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
+(setq-default tab-width 4)
 
 ;; Matching parentheses.
 (set-face-background 'show-paren-match "grey80")
